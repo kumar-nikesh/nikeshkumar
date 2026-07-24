@@ -20,14 +20,8 @@ import type {
   Stat,
 } from "@/types/portfolio";
 
-const githubRepository = process.env.GITHUB_REPOSITORY ?? "";
-const [githubOwner, githubRepo] = githubRepository.split("/");
-const defaultGithubOwner = "nikeshksingh";
-const owner = githubOwner || defaultGithubOwner;
-const isUserOrOrgPagesRepo = githubRepo?.endsWith(".github.io") ?? false;
-const basePath = githubRepo && !isUserOrOrgPagesRepo ? `/${githubRepo}` : "";
-const siteOrigin = `https://${owner}.github.io`;
-const siteUrl = `${siteOrigin}${basePath}`;
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nikeshksingh.github.io/nikeshkumar.github.io";
 
 export const siteConfig = {
   name: "Nikesh Singh",
