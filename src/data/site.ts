@@ -20,12 +20,21 @@ import type {
   Stat,
 } from "@/types/portfolio";
 
+const githubRepository = process.env.GITHUB_REPOSITORY ?? "";
+const [githubOwner, githubRepo] = githubRepository.split("/");
+const defaultGithubOwner = "nikeshksingh";
+const owner = githubOwner || defaultGithubOwner;
+const isUserOrOrgPagesRepo = githubRepo?.endsWith(".github.io") ?? false;
+const basePath = githubRepo && !isUserOrOrgPagesRepo ? `/${githubRepo}` : "";
+const siteOrigin = `https://${owner}.github.io`;
+const siteUrl = `${siteOrigin}${basePath}`;
+
 export const siteConfig = {
   name: "Nikesh Singh",
   title: "Software Engineer | .NET | Microservices | AI & Data",
   description:
     "Experienced software engineer building scalable backend systems, APIs, microservices, and distributed applications while expanding into AI, data engineering, and machine learning.",
-  url: "https://nikeshksingh.github.io",
+  url: siteUrl,
   seo: {
     title: "Nikesh Singh – Software Engineer | .NET | Microservices | AI & Data",
     description:
@@ -44,7 +53,7 @@ export const siteConfig = {
       "Machine Learning",
     ],
   },
-  resumePath: "/resume/nikesh-singh-resume.pdf",
+  resumePath: `${basePath}/resume/nikesh-singh-resume.pdf`,
 };
 
 export const navigationItems: NavigationItem[] = [
