@@ -1,0 +1,12 @@
+export { AboutSection } from "./about-section";
+export { AiAssistantSection } from "./ai-assistant-section";
+export { ArchitectureSection } from "./architecture-section";
+export { ContactSection } from "./contact-section";
+export { ExperienceSection } from "./experience-section";
+export { Footer } from "./footer";
+export { HeroSection } from "./hero-section";
+export { JourneySection } from "./journey-section";
+export { Navbar } from "./navbar";
+export { ProjectsSection } from "./projects-section";
+export { ResumeSection } from "./resume-section";
+export { SkillsSection } from "./skills-section";
