@@ -12,7 +12,7 @@ export function ExperienceSection() {
         <SectionHeading
           eyebrow="Experience"
           title="Professional timeline"
-          description="This timeline is ready for factual updates. Placeholder entries are clearly marked so the site never invents employment history or achievements."
+          description="A career spanning healthcare diagnostics, industrial automation, wind power, enterprise platforms, and search technology."
         />
       </Reveal>
       <div className="mt-12 space-y-6">

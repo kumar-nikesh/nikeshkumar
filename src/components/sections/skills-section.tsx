@@ -13,7 +13,7 @@ export function SkillsSection() {
       <Reveal>
         <SectionHeading
           eyebrow="Skills"
-          title="Core engineering strengths, organized for clarity"
+          title="Tech Stack & Tools"
           description="The skills section is intentionally categorized by how work is actually done: language fluency, backend delivery, distributed systems, cloud operations, and the expanding data and AI toolset."
           align="center"
         />

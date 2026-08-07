@@ -1,4 +1,4 @@
-import type { LucideIcon } from "lucide-react";
+import type { ComponentType } from "react";
 
 export type NavigationItem = {
   href: string;
@@ -36,7 +36,6 @@ export type ProjectItem = {
   architecture: string;
   technologies: string[];
   contributions: string[];
-  githubUrl: string;
   liveUrl?: string;
   featured?: boolean;
   placeholder?: boolean;
@@ -62,8 +61,13 @@ export type ContactLink = {
   label: string;
   value: string;
   href: string;
-  icon: LucideIcon;
+  icon: ComponentType<{ className?: string }>;
   placeholder?: boolean;
+};
+
+export type FooterLink = {
+  label: string;
+  href: string;
 };
 
 export type AiQuestion = {

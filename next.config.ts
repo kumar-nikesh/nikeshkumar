@@ -5,7 +5,8 @@ const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? fallbackRepoNam
 const ownerName = process.env.GITHUB_REPOSITORY?.split("/")[0] ?? "nikeshksingh";
 const expectedUserSiteRepo = `${ownerName.toLowerCase()}.github.io`;
 const isUserOrOrgPagesRepo = repoName.toLowerCase() === expectedUserSiteRepo;
-const basePath = !repoName || isUserOrOrgPagesRepo ? "" : `/${repoName}`;
+const deploymentBasePath = !repoName || isUserOrOrgPagesRepo ? "" : `/${repoName}`;
+const basePath = process.env.NODE_ENV === "development" ? "" : deploymentBasePath;
 const siteUrl = `https://${ownerName}.github.io${basePath}`;
 
 const nextConfig: NextConfig = {

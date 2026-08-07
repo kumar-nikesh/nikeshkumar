@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Menu } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { navigationItems, siteConfig } from "@/data/site";
@@ -10,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./theme-toggle";
 
 export function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -21,28 +23,40 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-40 px-4 pt-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-40 px-4 pt-3 sm:px-6 lg:px-8">
       <div
         className={cn(
           "mx-auto flex max-w-7xl items-center justify-between rounded-full border px-4 py-3 transition-all duration-300 sm:px-5",
           scrolled ? "glass-panel" : "border-transparent bg-transparent"
         )}
       >
-        <Link href="#home" className="font-heading text-sm font-semibold tracking-[0.2em] text-foreground uppercase">
+        <Link href="/" className="font-heading text-sm font-semibold tracking-[0.2em] text-foreground uppercase">
           {siteConfig.name}
         </Link>
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center justify-center gap-1 lg:flex lg:flex-1">
           {navigationItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="rounded-full px-4 py-2 text-sm text-muted-foreground transition hover:bg-muted/70 hover:text-foreground"
-            >
-              {item.label}
-            </Link>
+            (() => {
+              const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-current={isActive ? "page" : undefined}
+                  className={cn(
+                    "rounded-full px-3 py-2 text-sm transition hover:bg-muted/70 hover:text-foreground",
+                    isActive
+                      ? "bg-primary/12 font-semibold text-primary ring-1 ring-primary/20"
+                      : "text-muted-foreground"
+                  )}
+                >
+                  {item.label}
+                </Link>
+              );
+            })()
           ))}
         </nav>
-        <div className="hidden items-center gap-2 lg:flex">
+        <div className="hidden shrink-0 items-center gap-2 lg:flex">
           <ThemeToggle />
           <Button asChild variant="outline" size="sm">
             <a href={siteConfig.resumePath} download>
@@ -73,14 +87,26 @@ export function Navbar() {
             </div>
             <div className="mt-6 grid gap-2">
               {navigationItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="rounded-2xl border border-border bg-card px-4 py-3 text-sm font-medium text-foreground transition hover:bg-muted/70"
-                >
-                  {item.label}
-                </a>
+                (() => {
+                  const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setMobileOpen(false)}
+                      aria-current={isActive ? "page" : undefined}
+                      className={cn(
+                        "rounded-2xl border px-4 py-3 text-sm font-medium transition hover:bg-muted/70",
+                        isActive
+                          ? "border-primary/30 bg-primary/10 text-primary"
+                          : "border-border bg-card text-foreground"
+                      )}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })()
               ))}
               <a
                 href={siteConfig.resumePath}

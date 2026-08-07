@@ -35,14 +35,14 @@ export default function OpenGraphImage() {
             textTransform: "uppercase",
           }}
         >
-          Nikesh Singh
+          Nikesh Kumar
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 24, maxWidth: 900 }}>
           <div style={{ fontSize: 72, fontWeight: 700, lineHeight: 1.05 }}>
-            Software Engineer | .NET | Microservices | AI & Data
+            Software Architect
           </div>
           <div style={{ fontSize: 32, lineHeight: 1.4, color: "rgba(248,250,252,0.82)" }}>
-            Scalable backend systems, APIs, distributed architecture, and a growing focus on data engineering and AI.
+            Designing scalable software, data, and AI systems.
           </div>
         </div>
       </div>

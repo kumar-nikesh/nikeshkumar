@@ -12,10 +12,13 @@ npm run dev
 ## Build for production
 
 ```bash
+npm run generate:resume
 npm run build
 ```
 
 The static output is generated in `out/`.
+
+The resume PDF is generated from the portfolio data and written to `public/resume/nikesh-kumar-resume.pdf`.
 
 ## Deploy to GitHub Pages
 

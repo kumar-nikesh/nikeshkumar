@@ -66,6 +66,17 @@
   border-color: var(--border);
 }
 
+a,
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+button:disabled,
+[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
 html {
   scroll-behavior: smooth;
 }

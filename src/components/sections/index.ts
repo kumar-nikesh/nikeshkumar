@@ -10,3 +10,7 @@ export { Navbar } from "./navbar";
 export { ProjectsSection } from "./projects-section";
 export { ResumeSection } from "./resume-section";
 export { SkillsSection } from "./skills-section";
+export { ConsultingSection } from "./consulting-section";
+export { HomeOverviewSection } from "./home-overview-section";
+export { TypingLine } from "./typing-line";
+export { BlogsSection } from "./blogs-section";

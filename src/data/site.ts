@@ -1,17 +1,12 @@
-import {
-  BrainCircuit,
-  FolderGit2,
-  Link2,
-  Mail,
-  MessageSquare,
-  ServerCog,
-} from "lucide-react";
+import { Mail, MessageSquare, Phone } from "lucide-react";
+import { FaLinkedin } from "react-icons/fa6";
 
 import type {
   AiQuestion,
   ArchitectureItem,
   ContactLink,
   ExperienceItem,
+  FooterLink,
   JourneyStep,
   NavigationItem,
   ProjectItem,
@@ -21,20 +16,20 @@ import type {
 } from "@/types/portfolio";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nikeshksingh.github.io/nikeshkumar.github.io";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nikeshksingh.github.io/";
 
 export const siteConfig = {
-  name: "Nikesh Singh",
-  title: "Software Engineer | .NET | Microservices | AI & Data",
+  name: "Nikesh Kumar",
+  title: "Software Architect",
   description:
-    "Experienced software engineer building scalable backend systems, APIs, microservices, and distributed applications while expanding into AI, data engineering, and machine learning.",
+    "Software architect designing scalable systems across backend engineering, data platforms, and AI-enabled products.",
   url: siteUrl,
   seo: {
-    title: "Nikesh Singh – Software Engineer | .NET | Microservices | AI & Data",
+    title: "Nikesh Kumar – Software Architect | Data & AI",
     description:
-      "Personal resume and portfolio for Nikesh Singh, showcasing .NET, ASP.NET Core, microservices, distributed systems, cloud engineering, and an evolving focus on AI and data.",
+      "Portfolio of Nikesh Kumar, a software architect designing scalable backend, data, and AI systems.",
     keywords: [
-      "Nikesh Singh",
+      "Nikesh Kumar",
       ".NET",
       "Microservices",
       "ASP.NET Core",
@@ -47,19 +42,29 @@ export const siteConfig = {
       "Machine Learning",
     ],
   },
-  resumePath: `${basePath}/resume/nikesh-singh-resume.pdf`,
+  resumePath: `${basePath}/resume/nikesh-kumar-resume.pdf`,
+};
+
+export const contactDetails = {
+  email: "nikesh_kumar@hotmail.com",
+  phone: "+91 9916134333",
+  phoneDisplay: "Available on request",
+  linkedinUrl: "https://www.linkedin.com/in/nikeshkumar09/",
+  websiteUrl: siteConfig.url,
 };
 
 export const navigationItems: NavigationItem[] = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
-  { href: "#architecture", label: "Architecture" },
-  { href: "#ai-data", label: "AI & Data" },
-  { href: "#resume", label: "Resume" },
-  { href: "#contact", label: "Contact" },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/work", label: "Work" },
+  { href: "/blogs", label: "Blogs" },
+  { href: "/consulting", label: "Consulting" },
+  { href: "/contact", label: "Contact" },
+];
+
+export const footerNavigationItems: NavigationItem[] = [
+  { href: "/ai-data", label: "AI & Data" },
+  { href: "/resume", label: "Resume" },
 ];
 
 export const heroStats: Stat[] = [
@@ -72,12 +77,12 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "Programming",
     description: "Core languages used across application development, automation, data work, and web interfaces.",
-    skills: ["C#", "Python", "SQL", "JavaScript", "TypeScript"],
+    skills: ["C#", "Python", "SQL", "SQL / NoSQL", "JavaScript", "TypeScript"],
   },
   {
     title: "Backend",
     description: "Service-oriented engineering with clean APIs, maintainable domain boundaries, and production-ready platforms.",
-    skills: [".NET", "ASP.NET Core", "Web API", "REST APIs", "Microservices"],
+    skills: [".NET", ".NET Core", "ASP.NET Core", "Web API", "REST APIs", "Microservices", "Architecture"],
   },
   {
     title: "Distributed Systems",
@@ -94,7 +99,7 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "Cloud & DevOps",
     description: "Infrastructure, delivery, and deployment practices that keep software predictable from commit to production.",
-    skills: ["Azure", "Docker", "Kubernetes", "CI/CD", "GitHub Actions", "Azure DevOps"],
+    skills: ["Azure", "Docker", "Kubernetes", "Git", "CI/CD", "GitHub Actions", "Azure DevOps"],
   },
   {
     title: "Data & AI",
@@ -114,86 +119,247 @@ export const skillCategories: SkillCategory[] = [
 
 export const experiences: ExperienceItem[] = [
   {
-    role: "Senior Software Engineer",
-    company: "Placeholder company",
-    duration: "Add actual duration",
-    location: "Add location",
+    role: "Lead Engineer - Design & Development",
+    company: "Siemens Healthcare",
+    duration: "June 2018 to present",
+    location: "Location not specified",
     description:
-      "Placeholder entry. Replace with an actual position to describe backend platform development, API ownership, and service scalability work.",
+      "Lead Engineer working on the Atellica Solution immunoassay and clinical chemistry analyzer platform, including the current Griffin cloud-native Laboratory Informatics project.",
     responsibilities: [
-      "Replace with real responsibilities covering design, delivery, and collaboration.",
-      "Add the microservices, API, and distributed-system problems solved in the role.",
-      "List measurable platform, reliability, or delivery outcomes once available.",
+      "Lead the design and development of ASP.NET Core microservices and BFF services supporting laboratory, patient, sample, and quality control workflows.",
+      "Design secure REST APIs with OpenAPI contract-first architecture and integrate laboratory middleware systems.",
+      "Build distributed caching and asynchronous processing with Redis and SignalR, and support containerized deployments with Docker, Kubernetes, and Azure DevOps.",
+      "Analyze software requirements, manage scope and estimates, coordinate with global teams, review code, mentor engineers, and support production systems.",
     ],
-    technologies: [".NET", "ASP.NET Core", "Redis", "Docker", "Kubernetes"],
+    technologies: [
+      "C#",
+      ".NET 8",
+      "ASP.NET Core",
+      "Microservices",
+      "OpenAPI",
+      "EF Core",
+      "SQL Server",
+      "Redis",
+      "SignalR",
+      "Keycloak",
+      "OAuth2/OIDC",
+      "JWT",
+      "Angular",
+      "TypeScript",
+      "RxJS",
+      "NgRx",
+      "Docker",
+      "Kubernetes (AKS/k3s)",
+      "Azure DevOps",
+      "xUnit/NUnit",
+    ],
     achievements: [
-      "Placeholder only. Update with factual achievements before publishing.",
+      "Improved application resiliency, scalability, and maintainability through distributed-system design and cloud-native development practices.",
+      "Provided early solutions and fixes for verification and reliability testing on the ARM module of Atellica CI 1900.",
+      "Maintained communication mechanisms among SIM, Hydra Instrument Service, Maintenance Manager, and DML across analyzers.",
     ],
-    placeholder: true,
+  },
+  {
+    role: "Lead Engineer",
+    company: "Schneider Electric",
+    duration: "July 2017 to June 2018",
+    location: "Location not specified",
+    description:
+      "Worked on SoMove, user-friendly PC setup software for configuring, starting, and maintaining Schneider Electric motor control devices.",
+    responsibilities: [
+      "Performed requirements analysis, solution design, coding, documentation, unit testing, debugging, and bug fixing.",
+      "Managed build processing and ensured timely delivery and release management.",
+    ],
+    technologies: ["C#/.NET", "Web API", "Angular", "SQL Server 2008", "LINQ", "Visual Studio 2015-2017"],
+    achievements: [
+      "Delivered and maintained setup software supporting configuration, start-up, and maintenance workflows for motor control devices.",
+    ],
+  },
+  {
+    role: "Senior System Engineer",
+    company: "Siemens Technology and Service Private Limited",
+    duration: "August 2014 to July 2017",
+    location: "Location not specified",
+    description:
+      "Worked on WPMC-SM, the Security Management subsystem for wind park networks, providing user management, authentication, access rights, and security logging.",
+    responsibilities: [
+      "Performed requirements analysis, solution design, coding, documentation, unit testing, debugging, and bug fixing.",
+      "Managed build processing and ensured timely delivery and release management for security-management functionality.",
+    ],
+    technologies: ["WCF", "Web API", "C#/.NET", "Entity Framework", "LINQ", "SQL Server 2008", "Visual Studio 2010/2012/2015"],
+    achievements: [
+      "Achieved 80% code coverage in the BDD test environment.",
+      "Refactored services to improve performance and code reuse.",
+    ],
+  },
+  {
+    role: "Senior System Engineer",
+    company: "Infosys Limited",
+    duration: "July 2013 to August 2014",
+    location: "Location not specified",
+    description:
+      "Worked on Microsoft projects including NGVL Licensing Content Store and PMC, supporting Azure-based content management and partner membership workflows.",
+    responsibilities: [
+      "Performed requirements analysis, solution design, coding, documentation, unit testing, debugging, and bug fixing.",
+      "Managed build processing, delivery and release management, and client communication.",
+    ],
+    technologies: ["C#/.NET", "ASP.NET MVC", "SQL Server 2012", "Web Services", "Entity Framework", "HTML5", "jQuery", "Windows Azure", "CSS"],
+    achievements: [
+      "Delivered functionality for an Azure-based Licensing Content Store with security-aware content hosting and retrieval.",
+      "Supported Microsoft partner membership workflows that enabled partners to associate with Microsoft and showcase competencies.",
+    ],
   },
   {
     role: "Software Engineer",
-    company: "Placeholder company",
-    duration: "Add actual duration",
-    location: "Add location",
+    company: "Nerve Centrex Software (India) Pvt. Ltd.",
+    duration: "February 2012 to May 2013",
+    location: "Location not specified",
     description:
-      "Placeholder entry for earlier career progression, showing growth in backend engineering, integration patterns, and service design.",
+      "Worked on Amlooking4, a search engine for businesses, people, products, and solutions with online, telephonic, SMS, and mobile-app channels.",
     responsibilities: [
-      "Document real backend feature ownership and maintenance responsibilities.",
-      "Describe any API modernization, observability, or deployment improvements.",
-      "Note collaboration with product, QA, DevOps, or architecture stakeholders.",
+      "Participated in requirements gathering, application design, coding, and testing activities.",
+      "Designed the application database using Oracle 10g and worked on web services and browser-based functionality.",
     ],
-    technologies: ["C#", "SQL", "REST APIs", "Azure", "CI/CD"],
+    technologies: ["C#/.NET", "ASP.NET", "Oracle 10g", "Ajax", "JavaScript", "Web Services", "Windows XP"],
     achievements: [
-      "Placeholder only. Replace with verified outcomes or remove this bullet.",
+      "Contributed to a multi-channel search platform serving information about businesses, people, products, and solutions.",
     ],
-    placeholder: true,
   },
 ];
 
 export const projects: ProjectItem[] = [
   {
     name: "Griffin",
-    tagline: "Enterprise microservices platform",
+    tagline: "Cloud-native Laboratory Informatics platform",
     description:
-      "Placeholder project framing for a large-scale enterprise system built around modular services, distributed communication, and operational resilience.",
+      "A Siemens Healthineers platform providing laboratory workflow management, vendor middleware integration, real-time data processing, and microservice-based healthcare solutions.",
     problem:
-      "Supports business workflows that need independent services, shared data consistency strategies, responsive APIs, and real-time interactions across domains.",
+      "Supports business-critical laboratory, patient, sample, and quality control workflows that require secure integrations, real-time communication, resilient processing, and scalable operations.",
     architecture:
-      "Microservices-based architecture with API-first contracts, distributed caching, event propagation, and containerized deployment orchestration.",
+      "Cloud-native microservices and BFF services using OpenAPI contract-first APIs, distributed caching, asynchronous processing, secure identity, and containerized Kubernetes deployments.",
     technologies: [
-      ".NET",
+      "C#",
+      ".NET 8",
+      "ASP.NET Core",
       "Microservices",
+      "OpenAPI",
+      "Entity Framework Core",
+      "SQL Server",
       "Redis",
       "SignalR",
-      "Kubernetes",
-      "APIs",
-      "Distributed systems",
+      "Keycloak",
+      "OAuth2/OIDC",
+      "JWT",
+      "Angular",
+      "TypeScript",
+      "RxJS",
+      "NgRx",
+      "Docker",
+      "Kubernetes (AKS/k3s)",
+      "Azure DevOps",
     ],
     contributions: [
-      "Placeholder: replace with Nikesh's exact design, implementation, or ownership contributions.",
-      "Placeholder: document real scalability, reliability, or architecture improvements.",
-      "Placeholder: include verified integration, caching, or deployment outcomes.",
+      "Led the design and development of scalable microservices and BFF services for laboratory workflows.",
+      "Implemented secure REST APIs, distributed caching, asynchronous processing, and SignalR-based real-time communication.",
+      "Collaborated with global teams, performed code reviews, mentored engineers, and supported production troubleshooting and containerized deployments.",
     ],
-    githubUrl: "https://github.com/nikeshksingh",
     featured: true,
-    placeholder: true,
   },
   {
-    name: "API Platform Accelerator",
-    tagline: "Reference backend delivery template",
+    name: "Atellica Solution",
+    tagline: "Immunoassay and clinical chemistry analyzers",
     description:
-      "Placeholder showcase for a reusable service foundation covering authentication, observability, deployment, and service conventions.",
+      "A flexible, scalable, automation-ready analyzer solution combining immunoassay and clinical chemistry workflows with advanced sample-management technology.",
     problem:
-      "Reduces repetitive setup work for new backend services and helps teams standardize delivery quality.",
+      "Addresses clinical laboratory challenges through customizable analyzer configurations, broad assay support, and integrated sample-management workflows.",
     architecture:
-      "Modular service template with clean architecture boundaries, shared infrastructure packages, and CI validation.",
-    technologies: ["ASP.NET Core", "Docker", "GitHub Actions", "SQL"],
+      "Service-oriented analyzer software with Hydra Instrument Service, Maintenance Manager, SIM, and DML communication mechanisms.",
+    technologies: ["C#/.NET", "Web API", "Microservices", "Angular", "SQL Server 2008", "LINQ", "Visual Studio 2019-2022"],
     contributions: [
-      "Placeholder: replace with actual reusable components or engineering standards built.",
+      "Developed features for the Hydra Instrument Service and Maintenance Manager modules and maintained them across analyzers.",
+      "Analyzed requirements with the Siemens Healthcare Diagnostics USA team and designed solutions for new requirements.",
+      "Provided early solutions and fixes for verification and reliability testing on the Atellica CI 1900 ARM module.",
     ],
-    githubUrl: "https://github.com/nikeshksingh",
-    placeholder: true,
+  },
+  {
+    name: "SoMove",
+    tagline: "Motor control device setup software",
+    description:
+      "PC software for configuring, starting, and maintaining Schneider Electric motor control devices.",
+    problem:
+      "Provides user-friendly workflows for device setup and maintenance across configuration preparation, start-up, and service activities.",
+    architecture: "Desktop setup application backed by Web API services and Angular user interfaces.",
+    technologies: ["C#/.NET", "Web API", "Angular", "SQL Server 2008", "LINQ", "Visual Studio 2015-2017"],
+    contributions: [
+      "Owned requirements analysis, design, implementation, testing, debugging, bug fixing, and release management.",
+    ],
+  },
+  {
+    name: "WPMC: Single Sign-On using OpenID Connect",
+    tagline: "Wind power application authentication",
+    description:
+      "Single sign-on authentication allowing users to access multiple authorized applications without repeated login prompts.",
+    problem:
+      "Centralizes session and user authentication across applications while respecting application access rights.",
+    architecture: "Web API and ASP.NET MVC application using Entity Framework and AngularJS with OpenID Connect authentication.",
+    technologies: ["C#/.NET", "Web API", "ASP.NET MVC", "Entity Framework", "HTML5", "AngularJS", "SQL Server 2008", "LINQ"],
+    contributions: [
+      "Performed requirements analysis, design, coding, documentation, testing, debugging, bug fixing, and release management.",
+      "Achieved 80% code coverage after understanding and working in the BDD test environment.",
+    ],
+  },
+  {
+    name: "WPMC-SM",
+    tagline: "Wind Power Management Center security management",
+    description:
+      "Security Management functionality for user administration, authentication, access rights, and security logging within a wind park network.",
+    problem:
+      "Protects sub-systems by controlling identities and recording user activity and security-setting changes.",
+    architecture: "WCF and Web API services with Entity Framework and SQL Server persistence.",
+    technologies: ["WCF", "Web API", "C#/.NET", "Entity Framework", "LINQ", "SQL Server 2008", "Visual Studio 2010/2012/2015"],
+    contributions: [
+      "Delivered requirements analysis, design, coding, testing, debugging, bug fixing, build processing, and release management.",
+      "Refactored services to improve performance and code reuse while achieving 80% code coverage in the BDD environment.",
+    ],
+  },
+  {
+    name: "NGVL: Licensing Content Store",
+    tagline: "Azure-based content management",
+    description:
+      "An Azure-based solution for securely storing and serving application-specific content across Microsoft ECIT applications.",
+    problem:
+      "Provides consistent content infrastructure while applying the security constraints required by each application.",
+    architecture: "ASP.NET MVC and web services with Entity Framework, SQL Server, Azure deployment, and HTML5 interfaces.",
+    technologies: ["C#/.NET", "ASP.NET MVC", "SQL Server 2012", "Web Services", "Entity Framework", "HTML5", "jQuery", "Windows Azure"],
+    contributions: [
+      "Performed requirements analysis, design, coding, documentation, unit testing, debugging, bug fixing, build processing, and client communication.",
+    ],
+  },
+  {
+    name: "PMC: Partner Membership Center",
+    tagline: "Microsoft partner relationship platform",
+    description:
+      "A platform enabling partners to associate with Microsoft and showcase their competencies.",
+    problem:
+      "Supports partner membership workflows and strengthens the relationship between Microsoft and its partners.",
+    architecture: "ASP.NET and Entity Framework application with SQL Server persistence.",
+    technologies: ["SQL Server 2008", "ASP.NET", "C#/.NET", "Entity Framework", "Visual Studio 2008/2010"],
+    contributions: [
+      "Performed requirements analysis, design, coding, debugging, bug fixing, client communication, and delivery management.",
+    ],
+  },
+  {
+    name: "Amlooking4",
+    tagline: "Business and product search engine",
+    description:
+      "A search engine for businesses, people, products, and solutions with online, telephonic, SMS, and mobile-app channels.",
+    problem:
+      "Connects customers with business and product information through multiple search and communication channels.",
+    architecture: "ASP.NET application with Oracle-backed data services, AJAX interactions, JavaScript, and web services.",
+    technologies: ["C#/.NET", "ASP.NET", "Oracle 10g", "AJAX", "JavaScript", "Web Services"],
+    contributions: [
+      "Participated in requirements gathering, application design, coding, testing, and database design using Oracle 10g.",
+    ],
   },
 ];
 
@@ -262,7 +428,7 @@ export const resumeBlocks: ResumeBlock[] = [
   {
     title: "Technical skills",
     items: [
-      ".NET, C#, ASP.NET Core, REST APIs, Microservices, Redis, SignalR, Kafka, RabbitMQ, Azure, Docker, Kubernetes",
+      ".NET, .NET Core, C#, ASP.NET Core, REST APIs, Microservices, Architecture, SQL / NoSQL, Redis, SignalR, Kafka, RabbitMQ, Azure, Docker, Kubernetes, Git",
       "Python, Pandas, NumPy, Jupyter, Data Science, Machine Learning, Generative AI, AI Agents",
     ],
   },
@@ -276,37 +442,50 @@ export const resumeBlocks: ResumeBlock[] = [
   },
   {
     title: "Projects",
-    items: ["Griffin and other factual projects can be summarized here once details are confirmed."],
+    items: ["Griffin, Atellica Solution, SoMove, WPMC, WPMC-SM, NGVL, PMC, and Amlooking4."],
   },
 ];
 
 export const contactLinks: ContactLink[] = [
   {
     label: "Email",
-    value: "nikesh.singh@example.com",
-    href: "mailto:nikesh.singh@example.com",
+    value: contactDetails.email,
+    href: `mailto:${contactDetails.email}`,
     icon: Mail,
-    placeholder: true,
+  },
+  {
+    label: "Phone",
+    value: contactDetails.phoneDisplay,
+    href: "/contact",
+    icon: Phone,
   },
   {
     label: "LinkedIn",
-    value: "linkedin.com/in/your-linkedin",
-    href: "https://linkedin.com/in/your-linkedin",
-    icon: Link2,
-    placeholder: true,
-  },
-  {
-    label: "GitHub",
-    value: "github.com/nikeshksingh",
-    href: "https://github.com/nikeshksingh",
-    icon: FolderGit2,
+    value: "linkedin.com/in/nikeshkumar09/",
+    href: contactDetails.linkedinUrl,
+    icon: FaLinkedin,
   },
   {
     label: "Social",
     value: "Add optional profile",
-    href: "#contact",
+    href: "/contact",
     icon: MessageSquare,
     placeholder: true,
+  },
+];
+
+export const footerLinks: FooterLink[] = [
+  {
+    label: "Email",
+    href: `mailto:${contactDetails.email}`,
+  },
+  {
+    label: "Git",
+    href: "https://github.com/nikeshksingh",
+  },
+  {
+    label: "LinkedIn",
+    href: contactDetails.linkedinUrl,
   },
 ];
 
@@ -319,12 +498,12 @@ export const aiQuestions: AiQuestion[] = [
   {
     question: "Tell me about Nikesh's microservices experience.",
     answer:
-      "Nikesh focuses on decomposing backend systems into maintainable services with clear contracts, scalable communication patterns, distributed caching, and operational readiness. Replace the project-specific examples with verified details to make this section production-ready.",
+      "Nikesh has led the design and development of ASP.NET Core microservices and BFF services for Griffin, a Siemens Healthineers Laboratory Informatics platform. His work includes OpenAPI contract-first APIs, distributed caching with Redis, asynchronous processing, SignalR real-time communication, and containerized Kubernetes deployments.",
   },
   {
     question: "What is Nikesh's experience with .NET?",
     answer:
-      "The portfolio positions Nikesh as an experienced .NET engineer working on backend services, APIs, and enterprise application architecture. You should update the experience timeline with exact employers, durations, and achievements before publishing.",
+      "Nikesh has worked with C# and .NET throughout his career, progressing from ASP.NET and web services to ASP.NET Core, REST APIs, microservices, Entity Framework Core, and cloud-native healthcare platforms. He has held Lead Engineer and Senior System Engineer roles at Siemens Healthcare, Schneider Electric, Siemens Technology, and Infosys.",
   },
   {
     question: "Why is Nikesh moving toward Data Science?",
@@ -334,19 +513,7 @@ export const aiQuestions: AiQuestion[] = [
   {
     question: "What projects has Nikesh worked on?",
     answer:
-      "The current site includes factual-safe placeholder project structures, including Griffin as a microservices-based enterprise system. Replace placeholder contribution details with validated project history before launch.",
+      "Nikesh's project experience includes Griffin and Atellica Solution at Siemens Healthcare, SoMove at Schneider Electric, WPMC and WPMC-SM at Siemens, NGVL and PMC for Microsoft projects at Infosys, and the Amlooking4 search engine at Nerve Centrex.",
   },
 ];
 
-export const highlightCards = [
-  {
-    title: "Backend systems",
-    body: "Designing scalable services, APIs, and operationally reliable platforms.",
-    icon: ServerCog,
-  },
-  {
-    title: "Architecture thinking",
-    body: "Translating product needs into modular systems, integration strategies, and delivery standards.",
-    icon: BrainCircuit,
-  },
-];

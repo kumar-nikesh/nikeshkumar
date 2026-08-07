@@ -1,4 +1,4 @@
-import { ArrowUpRight, FolderGit2, Layers3 } from "lucide-react";
+import { ArrowUpRight, Layers3 } from "lucide-react";
 
 import { projects } from "@/data/site";
 import { Button } from "@/components/ui/button";
@@ -13,7 +13,7 @@ export function ProjectsSection() {
         <SectionHeading
           eyebrow="Featured projects"
           title="Work framed around problems, architecture, and contribution"
-          description="Project cards are structured to show engineering depth instead of just naming stacks. Placeholder project details are marked so they can be replaced with real outcomes later."
+          description="Project cards show the domains, engineering problems, architectures, and contributions behind the work."
         />
       </Reveal>
       <div className="mt-12 grid gap-6 lg:grid-cols-2">
@@ -70,12 +70,6 @@ export function ProjectsSection() {
                   </ul>
                 </div>
                 <div className="flex flex-col gap-3 sm:flex-row">
-                  <Button asChild variant="outline">
-                    <a href={project.githubUrl} target="_blank" rel="noreferrer">
-                      <FolderGit2 className="h-4 w-4" />
-                      GitHub link
-                    </a>
-                  </Button>
                   {project.liveUrl ? (
                     <Button asChild variant="secondary">
                       <a href={project.liveUrl} target="_blank" rel="noreferrer">
