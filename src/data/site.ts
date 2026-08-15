@@ -16,7 +16,7 @@ import type {
 } from "@/types/portfolio";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nikeshksingh.github.io/";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nikeshkumar.in";
 
 export const siteConfig = {
   name: "Nikesh Kumar",

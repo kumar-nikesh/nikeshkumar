@@ -37,3 +37,12 @@ This repository already includes a workflow at `.github/workflows/deploy.yml` th
 	`https://<username>.github.io/portfolio/`
 
 The Next.js config automatically handles both cases during GitHub Actions deploy.
+
+## Deploy to Vercel
+
+1. Import the `kumar-nikesh/nikeshkumar` repository into Vercel.
+2. Keep the framework set to `Next.js`, use `npm run build` as the build command, and leave the output directory at its default.
+3. In `Settings > Domains`, add `nikeshkumar.in` and configure the DNS records shown by Vercel at your domain provider.
+4. Redeploy after the domain is verified.
+
+The Next.js config automatically uses the domain root on Vercel. The Vercel deployment does not use the GitHub Pages repository path.
